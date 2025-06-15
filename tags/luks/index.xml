@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Aguirre Matteo</title>
-    <link>https://example.org/categories/linux/</link>
-    <description>Recent content in Linux on Aguirre Matteo</description>
+    <title>Luks on Aguirre Matteo</title>
+    <link>https://example.org/tags/luks/</link>
+    <description>Recent content in Luks on Aguirre Matteo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>aguirre.matteo77@gmail.com (Aguirre Matteo)</managingEditor>
     <webMaster>aguirre.matteo77@gmail.com (Aguirre Matteo)</webMaster>
     <copyright>&amp;copy; 2025, CC0 1.0 Universal. | </copyright>
-    <atom:link href="https://example.org/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>How to use SSH from Scratch</title>
-      <link>https://example.org/blog/linux/ssh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
-      <guid>https://example.org/blog/linux/ssh/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/blog/linux/ssh/featured.png" />
-    </item>
+    <atom:link href="https://example.org/tags/luks/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Protecting your files with LUKS</title>

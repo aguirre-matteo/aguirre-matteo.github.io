@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>How to use SSH from Scratch &middot; Aguirre Matteo</title>
-  <meta name="title" content="How to use SSH from Scratch &middot; Aguirre Matteo" />
+  <title>Protecting your files with LUKS &middot; Aguirre Matteo</title>
+  <meta name="title" content="Protecting your files with LUKS &middot; Aguirre Matteo" />
   
-  <meta name="description" content="Learn how to use and configure SSh to connect to your servers." />
-  <meta name="keywords" content="ssh, privacy, " />
+  <meta name="description" content="Explore how to use LUKS to fully encrypt your sensitive data." />
+  <meta name="keywords" content="luks, encryption, privacy, " />
   
   
-  <link rel="canonical" href="https://example.org/blog/linux/ssh/" />
+  <link rel="canonical" href="https://example.org/blog/linux/luks/" />
   
   
   
@@ -66,22 +66,23 @@
   
   
   
-  <meta property="og:url" content="https://example.org/blog/linux/ssh/">
+  <meta property="og:url" content="https://example.org/blog/linux/luks/">
   <meta property="og:site_name" content="Aguirre Matteo">
-  <meta property="og:title" content="How to use SSH from Scratch">
-  <meta property="og:description" content="Learn how to use and configure SSh to connect to your servers.">
+  <meta property="og:title" content="Protecting your files with LUKS">
+  <meta property="og:description" content="Explore how to use LUKS to fully encrypt your sensitive data.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:tag" content="Ssh">
+    <meta property="article:tag" content="Luks">
+    <meta property="article:tag" content="Encryption">
     <meta property="article:tag" content="Privacy">
-    <meta property="og:image" content="https://example.org/blog/linux/ssh/featured.png">
+    <meta property="og:image" content="https://example.org/blog/linux/luks/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://example.org/blog/linux/ssh/featured.png">
-  <meta name="twitter:title" content="How to use SSH from Scratch">
-  <meta name="twitter:description" content="Learn how to use and configure SSh to connect to your servers.">
+  <meta name="twitter:image" content="https://example.org/blog/linux/luks/featured.png">
+  <meta name="twitter:title" content="Protecting your files with LUKS">
+  <meta name="twitter:description" content="Explore how to use LUKS to fully encrypt your sensitive data.">
 
   
   <script type="application/ld+json">
@@ -89,12 +90,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "How to use SSH from Scratch",
-    "headline": "How to use SSH from Scratch",
-    "description": "Learn how to use and configure SSh to connect to your servers.",
+    "name": "Protecting your files with LUKS",
+    "headline": "Protecting your files with LUKS",
+    "description": "Explore how to use LUKS to fully encrypt your sensitive data.",
     
     "inLanguage": "en",
-    "url" : "https:\/\/example.org\/blog\/linux\/ssh\/",
+    "url" : "https:\/\/example.org\/blog\/linux\/luks\/",
     "author" : {
       "@type": "Person",
       "name": "Aguirre Matteo"
@@ -105,10 +106,10 @@
     
     
     
-    "keywords": ["ssh","privacy"],
+    "keywords": ["luks","encryption","privacy"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1784"
+    "wordCount": "834"
   }]
   </script>
 
@@ -471,7 +472,7 @@
   
 
 
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/blog/linux/ssh/featured_hu_2b43759d843f5c52.png);"></div>
+<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/blog/linux/luks/featured_hu_9d01e933cf928352.png);"></div>
 
 
 
@@ -492,7 +493,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      How to use SSH from Scratch
+      Protecting your files with LUKS
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -535,7 +536,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span title="Reading time">9 mins</span><span class="px-2 text-primary-500">&middot;</span>
+  <span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -590,10 +591,18 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ssh/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/luks/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Ssh
+    Luks
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/encryption/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Encryption
   </span>
 </span>
   </span>
@@ -653,22 +662,15 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#basic-syntax">Basic Syntax</a></li>
-    <li><a href="#setup">Setup</a>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#creating-an-encrypted-partition">Creating an encrypted partition</a></li>
+    <li><a href="#mounting-on-boot">Mounting on boot</a></li>
+    <li><a href="#managing-passphrases">Managing passphrases</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#server-configuration">Server Configuration</a></li>
+        <li><a href="#add-key">Add key</a></li>
+        <li><a href="#remove-key">Remove key</a></li>
       </ul>
     </li>
-    <li><a href="#remote-access">Remote Access</a></li>
-    <li><a href="#ssh-keys">SSH Keys</a></li>
-    <li><a href="#file-transfer">File Transfer</a>
-      <ul>
-        <li><a href="#scp">SCP</a></li>
-        <li><a href="#sftp">SFTP</a></li>
-      </ul>
-    </li>
-    <li><a href="#client-configuration">Client Configuration</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -684,22 +686,15 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#basic-syntax">Basic Syntax</a></li>
-    <li><a href="#setup">Setup</a>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#creating-an-encrypted-partition">Creating an encrypted partition</a></li>
+    <li><a href="#mounting-on-boot">Mounting on boot</a></li>
+    <li><a href="#managing-passphrases">Managing passphrases</a>
       <ul>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#server-configuration">Server Configuration</a></li>
+        <li><a href="#add-key">Add key</a></li>
+        <li><a href="#remove-key">Remove key</a></li>
       </ul>
     </li>
-    <li><a href="#remote-access">Remote Access</a></li>
-    <li><a href="#ssh-keys">SSH Keys</a></li>
-    <li><a href="#file-transfer">File Transfer</a>
-      <ul>
-        <li><a href="#scp">SCP</a></li>
-        <li><a href="#sftp">SFTP</a></li>
-      </ul>
-    </li>
-    <li><a href="#client-configuration">Client Configuration</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -756,365 +751,207 @@
     </span>        
     
 </h2>
-<p>SSH (Secure SHell) is a protocol designed to securely communicate with a remote computer.
-It validates the identity of user and encrypts all the data is send between the devices. It&rsquo;s
-widely used to run commands on a server over the internet and transfer files in a secure way. In
-this guide, I&rsquo;ll show you how to install SSH, configure it, and how you can use it to connect to your servers.</p>
+<p>Securing our private data from a bare-metal attack is
+extremely important if we want to ensure privacy. This
+is especially the case on laptops, since they&rsquo;re in
+constant exposure to the external world, and on enterprise
+and governmental computers, where a leak of information
+could compromise the personal data of a large number
+of persons. LUKS is currently the most powerful and widely
+adopted solution for disk encryption on Linux. In this guide
+I&rsquo;ll show you how to use LUKS to encrypt your disks, how to
+configure it to automatically mount on boot, and how to manage
+different passphrases to unlock the partition.</p>
 
 
-<h2 class="relative group">Basic Syntax 
-    <div id="basic-syntax" class="anchor"></div>
+<h2 class="relative group">Requirements 
+    <div id="requirements" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#basic-syntax" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>The basic syntax for using the SSH command is as follows:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh <span class="o">[</span>username<span class="o">]</span>@<span class="o">[</span>ip-address<span class="o">]</span>
-</span></span></code></pre></div><p>Where we replace <code>username</code> with your remote server username, and <code>ip-address</code> with the server&rsquo;s IP address.</p>
-
-
-<h2 class="relative group">Setup 
-    <div id="setup" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#setup" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">Installation 
-    <div id="installation" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Depending if we&rsquo;re on our server, or on our local machine, we have to install the <code>openssh-server</code> and <code>openssh-client</code> packages respectively.</p>
-<p>In the case of Debian/Ubuntu-based system, we open the terminal and run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install openssh-server
-</span></span><span class="line"><span class="cl">sudo apt install openssh-client
-</span></span></code></pre></div><p>Or if we are using RHEL or a derivative, we run instead:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo dnf install openssh-server
-</span></span><span class="line"><span class="cl">sudo dnf install openssh-clients
-</span></span></code></pre></div><p>Then we should start the SSH service on our server. We do so running the following commands:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> ssh <span class="c1"># Enables the service, starting at system boot.</span>
-</span></span><span class="line"><span class="cl">sudo systemctl start ssh <span class="c1"># Manually starts the service.</span>
-</span></span></code></pre></div><p>If we have a firewall enabled, we should also open the port 22, so
-we can reach our SSH server. For example, if we&rsquo;re using <code>ufw</code>, we can open the port running this command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># UFW will translate SSH to port 22</span>
-</span></span><span class="line"><span class="cl">sudo ufw allow ssh
+<p>Before continuing with the guide, we should first install
+the <code>cryptsetup</code> package, which provides the utils for
+managing LUKS.</p>
+<p>If we are using Debian/Ubuntu we must run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install cryptsetup
+</span></span></code></pre></div><p>Or in the case we&rsquo;re using a Fedora/RHEL derivative:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo dnf install cryptsetup-luks
+</span></span></code></pre></div><p>We&rsquo;ll also using <code>parted</code> for partitioning the disk, so
+make sure you have it installed, or use your prefered
+tool.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install parted <span class="c1"># Debian/Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo dnf install parted <span class="c1"># Fedora/RHEL</span>
 </span></span></code></pre></div>
 
-<h3 class="relative group">Server Configuration 
-    <div id="server-configuration" class="anchor"></div>
+<h2 class="relative group">Creating an encrypted partition 
+    <div id="creating-an-encrypted-partition" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#server-configuration" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Now that we have installed SSH, it&rsquo;s time to tweak its config file.
-We can find it at <code>/etc/ssh/sshd_config</code>. It provides a large number of
-options which we can find in the manual running <code>man sshd_config</code>. Here
-I show you an example configuration, which modifies the most commonly used options:</p>
-<pre tabindex="0"><code class="language-sshd_config" data-lang="sshd_config"># Which port SSH should use. It&#39;s highly recommended to keep it
-# at 22, since it could break your setup.
-Port 22
-
-# Prevents the clients from login as root. Keep this at false,
-# and use sudo instead when needed.
-PermitRootLogin no
-
-# Enables Public Key Autentication, making it posible to login 
-# using a SSH key instead of using a password.
-PubkeyAutentication yes
-
-# You&#39;ll only be able to auth to your server using SSH keys.
-# Make sure you add your keys before disabling this.
-PasswordAuthentication no
-
-# Users the clients are allowed to login as.
-# Other users will be disabled.
-AllowUsers myssh-user another_user
-AllowGroups ssh_users
-
-# Users the clients shouldn&#39;t be able to login as.
-# Other users will be enabled.
-DenyUsers root
-DenyGroups important_users
-</code></pre><p>After editing the file, we should restart the SSH service running <code>sudo systemctl restart ssh</code>.</p>
-
-
-<h2 class="relative group">Remote Access 
-    <div id="remote-access" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#remote-access" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#creating-an-encrypted-partition" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Now that our server is configured, we can connect to it using the <code>ssh</code> command. In this example, I access a Debian virtual machine:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh myssh-user@192.160.122.230
-</span></span><span class="line"><span class="cl">myssh-user@192.160.122.230<span class="err">&#39;</span>s password: 
-</span></span><span class="line"><span class="cl">Linux deb-homelab 6.1.0-37-amd64 <span class="c1">#1 SMP PREEMPT_DYNAMIC Debian 6.1.140-1 (2025-05-22) x86_64</span>
+<p>Open the terminal and find which disk/partition you want to encrypt.
+In my case, I have two virtual disks, <code>vda</code> and <code>vdb</code>, and I&rsquo;ll use
+the last to store my sensitive data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ lsblk
+</span></span><span class="line"><span class="cl">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+</span></span><span class="line"><span class="cl">vda    253:0    <span class="m">0</span>   20G  <span class="m">0</span> disk 
+</span></span><span class="line"><span class="cl">├─vda1 253:1    <span class="m">0</span>  1.9G  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">└─vda2 253:2    <span class="m">0</span> 18.1G  <span class="m">0</span> part 
+</span></span><span class="line"><span class="cl">vdb    253:16   <span class="m">0</span>   20G  <span class="m">0</span> disk 
+</span></span></code></pre></div><p>The first step is to format the disk/partition as a LUKS device. To
+do so we have to run <code>cryptsetup luksFormat /dev/disk</code> and set the
+passphrase we want to use to protect the data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksFormat /dev/vdb
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>
-</span></span><span class="line"><span class="cl">the exact distribution terms <span class="k">for</span> each program are described in the
-</span></span><span class="line"><span class="cl">individual files in /usr/share/doc/*/copyright.
+</span></span><span class="line"><span class="cl">WARNING!
+</span></span><span class="line"><span class="cl"><span class="o">========</span>
+</span></span><span class="line"><span class="cl">This will overwrite data on /dev/vdb irrevocably.
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-</span></span><span class="line"><span class="cl">permitted by applicable law.
-</span></span><span class="line"><span class="cl">Last login: Sat May <span class="m">31</span> 15:56:13 <span class="m">2025</span> from 192.160.122.13
-</span></span><span class="line"><span class="cl">myssh-user@deb-homelab:~$
-</span></span></code></pre></div><p>Add your username in place of <code>myssh-user</code> and add your server&rsquo;s IP in place of <code>192.160.122.230</code>, and enter the password of the user you specified.</p>
-<p>If it&rsquo;s the first time you&rsquo;re connecting to the server, you&rsquo;ll be prompted
-to verify the server&rsquo;s authenticity, seeing a message like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">The authenticity of host <span class="s1">&#39;192.160.122.230 (192.160.122.230)&#39;</span> can<span class="err">&#39;</span>t be established.
-</span></span><span class="line"><span class="cl">ECDSA key fingerprint is SHA256:ontibF1aG+nkeuyXhEO4zKJFfcWgJoX9TVUUdzdENk.
-</span></span><span class="line"><span class="cl">Are you sure you want to <span class="k">continue</span> connecting <span class="o">(</span>yes/no/<span class="o">[</span>fingerprint<span class="o">])</span>?
-</span></span></code></pre></div><p>We have to type <code>yes</code> and press Enter, then the server will be added to our list of known hosts.</p>
-
-
-<h2 class="relative group">SSH Keys 
-    <div id="ssh-keys" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ssh-keys" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>SSH keys are a more powerful method to authenticate to your servers,
-making your connection more secure and allowing to login without being
-asked for the password. To use SSH keys we first have to generate a
-public-private key pair. To do so we use the <code>ssh-keygen</code> command.
-We&rsquo;ll be prompted to enter the path where we want to save the key pair.
-I&rsquo;ll save mine at <code>~/.ssh/</code> and call it <code>myserver</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh-keygen 
-</span></span><span class="line"><span class="cl">Generating public/private ed25519 key pair.
-</span></span><span class="line"><span class="cl">Enter file in which to save the key <span class="o">(</span>/home/matteo/.ssh/id_ed25519<span class="o">)</span>: /home/matteo/.ssh/myserver
-</span></span><span class="line"><span class="cl">Enter passphrase <span class="k">for</span> <span class="s2">&#34;/home/matteo/.ssh/myserver&#34;</span> <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>: 
-</span></span><span class="line"><span class="cl">Enter same passphrase again: 
-</span></span><span class="line"><span class="cl">Your identification has been saved in /home/matteo/.ssh/myserver
-</span></span><span class="line"><span class="cl">Your public key has been saved in /home/matteo/.ssh/myserver.pub
-</span></span><span class="line"><span class="cl">The key fingerprint is:
-</span></span><span class="line"><span class="cl">SHA256:lNjTQHE+ojhhdlI9BwoGJKgpt/AjQPNJEtgIUmkI9sQ matteo@nixos
-</span></span><span class="line"><span class="cl">The key<span class="err">&#39;</span>s randomart image is:
-</span></span><span class="line"><span class="cl">+--<span class="o">[</span>ED25519 256<span class="o">]</span>--+
-</span></span><span class="line"><span class="cl"><span class="p">|</span>XO*+o .o<span class="o">=</span>o.      <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="nv">B</span><span class="o">=</span>*E o +o*.      <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="nv">oo</span><span class="o">=</span>.* + *o+      <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>* .<span class="o">=</span> <span class="o">=</span> o o .     <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>o+ .o . S        <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>. +  .           <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span> . .             <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>                 <span class="p">|</span>
-</span></span><span class="line"><span class="cl"><span class="p">|</span>                 <span class="p">|</span>
-</span></span><span class="line"><span class="cl">+----<span class="o">[</span>SHA256<span class="o">]</span>-----+
+</span></span><span class="line"><span class="cl">Are you sure? <span class="o">(</span>Type <span class="s1">&#39;yes&#39;</span> in capital letters<span class="o">)</span>: YES
+</span></span><span class="line"><span class="cl">Enter passphrase <span class="k">for</span> /dev/vdb: 
+</span></span><span class="line"><span class="cl">Verify passphrase: 
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$
-</span></span></code></pre></div><p>If we want, we can enter a passphrase for our private key, enhancing the
-security of the connection. Otherwise leave it empty. Now it&rsquo;s time to
-add our keys to our server using the <code>ssh-copy-id</code> command.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh-copy-id -i ~/.ssh/myserver myssh-user@192.160.122.230
-</span></span><span class="line"><span class="cl">/run/current-system/sw/bin/ssh-copy-id: INFO: Source of key<span class="o">(</span>s<span class="o">)</span> to be installed: <span class="s2">&#34;/home/matteo/.ssh/myserver.pub&#34;</span>
-</span></span><span class="line"><span class="cl">/run/current-system/sw/bin/ssh-copy-id: INFO: attempting to log in with the new key<span class="o">(</span>s<span class="o">)</span>, to filter out any that are already installed
-</span></span><span class="line"><span class="cl">/run/current-system/sw/bin/ssh-copy-id: INFO: <span class="m">1</span> key<span class="o">(</span>s<span class="o">)</span> remain to be installed -- <span class="k">if</span> you are prompted now it is to install the new keys
-</span></span><span class="line"><span class="cl">myssh-user@192.160.122.230<span class="s1">&#39;s password: 
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">Number of key(s) added: 1
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">Now try logging into the machine, with: &#34;ssh -i /home/matteo/.ssh/myserver &#39;</span>myssh-user@192.160.122.230<span class="err">&#39;</span><span class="s2">&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">and check to make sure that only the key(s) you wanted were added.
-</span></span></span><span class="line"><span class="cl"><span class="s2">
-</span></span></span><span class="line"><span class="cl"><span class="s2">[matteo@nixos:~]</span>$<span class="s2">
-</span></span></span></code></pre></div><p>We enter the password for the last time, and then it&rsquo;ll print in the screen
-that our keys were successfully added. Now we can connect to our server using the <code>-i</code> flag, followed by the path to the key.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh -i ~/.ssh/myserver myssh-user@192.160.122.230 
-</span></span><span class="line"><span class="cl">Linux deb-homelab 6.1.0-37-amd64 <span class="c1">#1 SMP PREEMPT_DYNAMIC Debian 6.1.140-1 (2025-05-22) x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
+</span></span></code></pre></div><p>This completely wiped the disk, so all the data that was there now
+is lost. To start working with it, we have to unlock the device
+using the <code>cryptsetup open</code> command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup open /dev/vdb encrypted-disk
+</span></span><span class="line"><span class="cl">Enter passphrase <span class="k">for</span> /dev/vdb: 
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>
-</span></span><span class="line"><span class="cl">the exact distribution terms <span class="k">for</span> each program are described in the
-</span></span><span class="line"><span class="cl">individual files in /usr/share/doc/*/copyright.
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
+</span></span></code></pre></div><p>I&rsquo;ll call it <code>encrypted-disk</code> so it&rsquo;s more easy to recognize it. Now
+the device is available under <code>/dev/mapper/encrypted-disk</code>. Replace
+the last part with the name you gave. I&rsquo;ll format it as a BTRFS
+filesystem and mount it at <code>/mnt</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ mkfs.btrfs /dev/mapper/encrypted-disk 
+</span></span><span class="line"><span class="cl">btrfs-progs v6.11
+</span></span><span class="line"><span class="cl">See https://btrfs.readthedocs.io <span class="k">for</span> more information.
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-</span></span><span class="line"><span class="cl">permitted by applicable law.
-</span></span><span class="line"><span class="cl">Last login: Sun Jun  <span class="m">1</span> 18:39:37 <span class="m">2025</span>
-</span></span><span class="line"><span class="cl">myssh-user@deb-homelab:~$ 
-</span></span></code></pre></div><p>And <em>voila</em>! We wasn&rsquo;t prompted for entering the password!</p>
-
-
-<h2 class="relative group">File Transfer 
-    <div id="file-transfer" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#file-transfer" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>SSH allows us to access the filesystem of our remote server in a safe way,
-encrypting the files, ensuring no one without permissions can read the contents.
-We&rsquo;ll use the <code>scp</code> and <code>sftp</code> commands to take advantage of SSH&rsquo;s features to
-work with our server&rsquo;s files.</p>
-
-
-<h3 class="relative group">SCP 
-    <div id="scp" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#scp" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>STP stands for Secure Copy and, as the name suggests, <code>scp</code> is an extended version of the
-<code>cp</code> command which can be used to copy files from our server. The syntax of <code>scp</code> is the
-same as the <code>cp</code> command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">scp <span class="o">[</span>from<span class="o">]</span> <span class="o">[</span>to<span class="o">]</span>
-</span></span></code></pre></div><p>Where both <code>from</code> and <code>to</code> can be in an extended form of SSH&rsquo;s target syntax,
-which uses a <code>:</code> to specify the path:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>username<span class="o">]</span>@<span class="o">[</span>ip-address<span class="o">]</span>:/path/to/file
-</span></span></code></pre></div><p>For example, if we want to copy a shell script to our server, we&rsquo;ll
-do something like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ scp ./bash-script.sh <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>myssh-user@192.160.122.230:/home/myssh-user/scripts/ <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-i /home/matteo/.ssh/myserver
-</span></span><span class="line"><span class="cl">bash-script.sh                             100%   <span class="m">83</span>    26.7KB/s   00:00 
+</span></span><span class="line"><span class="cl">NOTE: several default settings have changed in version 5.15, please make sure
+</span></span><span class="line"><span class="cl">      this does not affect your deployments:
+</span></span><span class="line"><span class="cl">      - DUP <span class="k">for</span> metadata <span class="o">(</span>-m dup<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      - enabled no-holes <span class="o">(</span>-O no-holes<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      - enabled free-space-tree <span class="o">(</span>-R free-space-tree<span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$
-</span></span></code></pre></div><p>Since we&rsquo;re using an SSH key to connect to the server, we weren&rsquo;t prompted to
-enter the password. We can also copy entire directories using the <code>-r</code> flag.
-For example, if we want to copy all the logs from the server to our computer,
-we do the following:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ scp -r myssh-user@192.160.122.230:/var/log/ ./logs <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-i /home/matteo/.ssh/myserver
+</span></span><span class="line"><span class="cl">Label:              <span class="o">(</span>null<span class="o">)</span>
+</span></span><span class="line"><span class="cl">UUID:               35cf0855-f5d6-4fe8-b773-808bbefb8493
+</span></span><span class="line"><span class="cl">Node size:          <span class="m">16384</span>
+</span></span><span class="line"><span class="cl">Sector size:        4096	<span class="o">(</span>CPU page size: 4096<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Filesystem size:    19.98GiB
+</span></span><span class="line"><span class="cl">Block group profiles:
+</span></span><span class="line"><span class="cl">  Data:             single            8.00MiB
+</span></span><span class="line"><span class="cl">  Metadata:         DUP             256.00MiB
+</span></span><span class="line"><span class="cl">  System:           DUP               8.00MiB
+</span></span><span class="line"><span class="cl">SSD detected:       no
+</span></span><span class="line"><span class="cl">Zoned device:       no
+</span></span><span class="line"><span class="cl">Features:           extref, skinny-metadata, no-holes, free-space-tree
+</span></span><span class="line"><span class="cl">Checksum:           crc32c
+</span></span><span class="line"><span class="cl">Number of devices:  <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Devices:
+</span></span><span class="line"><span class="cl">   ID        SIZE  PATH                      
+</span></span><span class="line"><span class="cl">    <span class="m">1</span>    19.98GiB  /dev/mapper/encrypted-disk
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ls log/
-</span></span><span class="line"><span class="cl">alternatives.log       dpkg.log       fontconfig.log  private
-</span></span><span class="line"><span class="cl">alternatives.log.1     dpkg.log.1     installer       README
-</span></span><span class="line"><span class="cl">alternatives.log.2.gz  dpkg.log.2.gz  journal         runit
-</span></span><span class="line"><span class="cl">apt                    faillog        lastlog         wtmp
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ mount /dev/mapper/encrypted-disk /mnt/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
+</span></span></code></pre></div><p>And if we want to umount it, we should run <code>umount</code> and
+<code>cryptsetup close</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ umount /mnt 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup close encrypted-disk 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
 </span></span></code></pre></div>
 
-<h3 class="relative group">SFTP 
-    <div id="sftp" class="anchor"></div>
+<h2 class="relative group">Mounting on boot 
+    <div id="mounting-on-boot" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#sftp" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>SFTP stands for Secure File Transfer Protocol. It&rsquo;s an improved version of the FTP
-protocol to use SSH to encrypt the communication, and it allows us to interactively
-access the remote filesystem providing commands like <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rm</code>, amoung
-others. To use it we have to run <code>sftp</code> and pass our server as the argument:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ sftp myssh-user@192.168.122.160 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-i /home/matteo/.ssh/myserver
-</span></span><span class="line"><span class="cl">Connected to 192.168.122.160.
-</span></span><span class="line"><span class="cl">sftp&gt; 
-</span></span></code></pre></div><p>By default, <code>sftp</code> will put us in the user&rsquo;s home directory. We can verify so
-typing <code>pwd</code> in the new shell:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sftp&gt; <span class="nb">pwd</span>
-</span></span><span class="line"><span class="cl">Remote working directory: /home/myssh-user
-</span></span><span class="line"><span class="cl">sftp&gt; 
-</span></span></code></pre></div><p>I have some Markdown files that I want to copy to the server. To do so we
-can use the <code>put</code> command, followed by the name of the files. Some commands
-related to the FS can be executed locally prefixing them with the letter <code>l</code>,
-such as <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>pwd</code> and <code>umask</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sftp&gt; lls
-</span></span><span class="line"><span class="cl">nixos-hardware.md  ssh-tutorial.md
-</span></span><span class="line"><span class="cl">sftp&gt; put nixos-hardware.md 
-</span></span><span class="line"><span class="cl">Uploading nixos-hardware.md to /home/ami/nixos-hardware.md
-</span></span><span class="line"><span class="cl">nixos-hardware.              100%    <span class="m">0</span>     0.0KB/s   00:00    
-</span></span><span class="line"><span class="cl">sftp&gt; put ssh-tutorial.md 
-</span></span><span class="line"><span class="cl">Uploading ssh-tutorial.md to /home/ami/ssh-tutorial.md
-</span></span><span class="line"><span class="cl">ssh-tutorial.            100%    <span class="m">0</span>     0.0KB/s   00:00    
-</span></span><span class="line"><span class="cl">sftp&gt; ls
-</span></span><span class="line"><span class="cl">nixos-hardware.md   ssh-tutorial.md     
-</span></span><span class="line"><span class="cl">sftp&gt; 
-</span></span></code></pre></div><p>Now if for some reason I&rsquo;ve lost those files, I can copy them back with
-the <code>get</code> command.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sftp&gt; lls
-</span></span><span class="line"><span class="cl">sftp&gt; get nixos-hardware.md 
-</span></span><span class="line"><span class="cl">Fetching /home/ami/nixos-hardware.md to nixos-hardware.md
-</span></span><span class="line"><span class="cl">sftp&gt; get ssh-tutorial.md 
-</span></span><span class="line"><span class="cl">Fetching /home/ami/ssh-tutorial.md to ssh-tutorial.md
-</span></span><span class="line"><span class="cl">sftp&gt; lls
-</span></span><span class="line"><span class="cl">nixos-hardware.md  ssh-tutorial.md
-</span></span><span class="line"><span class="cl">sftp&gt; 
-</span></span></code></pre></div><p>To see all the available commands in <code>sftp</code> we can type <code>help</code>
-and press enter.</p>
-
-
-<h2 class="relative group">Client Configuration 
-    <div id="client-configuration" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#client-configuration" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#mounting-on-boot" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>We may face some situations where we are constantly accessing to the same
-server, and it becomes repetitive to write the same username and IP address
-over and over again. To those cases, SSH allows up to create a config file
-under ~/.ssh/config to declare our servers so we can use an alias instead
-of running the entire command. These declarations uses the following syntax:</p>
-<pre tabindex="0"><code class="language-ssh_config" data-lang="ssh_config">Host &lt;alias&gt;
-    Hostname &lt;ip-address&gt;
-    User &lt;username&gt;
-    IdentityFile &lt;path&gt;
-    ...
-
-Host &lt;alias&gt;
-    Hostname &lt;ip-address&gt;
-    User &lt;username&gt;
-    IdentityFile &lt;path&gt;
-    ...
-</code></pre><p>In our example, we could declare the server and call it <code>myserver</code>, setting the
-IP address, the username and the path to the SSH key respectively:</p>
-<pre tabindex="0"><code class="language-ssh_config" data-lang="ssh_config">Host myserver
-    Hostname 192.160.122.230
-    User myssh-user
-    IdentityFile /home/matteo/.ssh/myserver
-</code></pre><p>So now we can simply pass <code>myserver</code> as the argument to <code>ssh</code> and it will
-automatically translate the alias to the real target and will use our
-key.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh myserver 
-</span></span><span class="line"><span class="cl">Linux deb-homelab 6.1.0-37-amd64 <span class="c1">#1 SMP PREEMPT_DYNAMIC Debian 6.1.140-1 (2025-05-22) x86_64</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>
-</span></span><span class="line"><span class="cl">the exact distribution terms <span class="k">for</span> each program are described in the
-</span></span><span class="line"><span class="cl">individual files in /usr/share/doc/*/copyright.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-</span></span><span class="line"><span class="cl">permitted by applicable law.
-</span></span><span class="line"><span class="cl">Last login: Fri Jun  <span class="m">6</span> 18:17:48 <span class="m">2025</span>
-</span></span><span class="line"><span class="cl">myssh-user@deb-homelab:~$
+<p>Cryptsetup has it own <code>fstab</code>-like config file where we can declare
+all the encrypted devices we want to unlock during the boot. We
+can find it at <code>/etc/crypttab</code> and the syntax of each line is like
+it follows:</p>
+<pre tabindex="0"><code class="language-crypttab" data-lang="crypttab">volume-name device key-file options
+</code></pre><p>In our example, I should configure it like this, using the UUID of
+the disk to identify it. We can get the UUID running <code>cryptsetup luksUUID</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksUUID /dev/vdb 
+</span></span><span class="line"><span class="cl">283c80cf-04ee-42f4-afe8-4b51bc124498
+</span></span></code></pre></div><p>On <code>/etc/crypttab</code>:</p>
+<pre tabindex="0"><code class="language-crypttab" data-lang="crypttab">encrypted-disk UUID=283c80cf-04ee-42f4-afe8-4b51bc124498 none luks
+</code></pre><p>Now we add an entry to <code>/etc/fstab</code> to mount it automatically on boot:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/dev/mapper/encrypted-disk /mnt btrfs defaults <span class="m">0</span> <span class="m">2</span>
+</span></span></code></pre></div><p>And the last step is to update the initram so the changes are applied:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">update-initramfs -u -k all
 </span></span></code></pre></div>
+
+<h2 class="relative group">Managing passphrases 
+    <div id="managing-passphrases" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#managing-passphrases" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>LUKS permits us to set multiple keys to unlock the encrypted disk,
+allowing for more flexibility. Cryptsetup provides commands for both
+adding and removing passphrases from the disk.</p>
+
+
+<h3 class="relative group">Add key 
+    <div id="add-key" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#add-key" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To add a new passphrase to our setup, we can use the <code>cryptsetup luksAddKey</code> command, followed by the device we want to modify.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksAddKey /dev/vda 
+</span></span><span class="line"><span class="cl">Enter any existing passphrase: 
+</span></span><span class="line"><span class="cl">Enter new passphrase <span class="k">for</span> key slot: 
+</span></span><span class="line"><span class="cl">Verify passphrase: 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
+</span></span></code></pre></div><p>It will prompt us to enter the already existent passphrase we&rsquo;ve set up, and the new passphrases we want to add.</p>
+
+
+<h3 class="relative group">Remove key 
+    <div id="remove-key" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#remove-key" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To remove a passphrase from the LUKS device, we use <code>cryptsetup luksRemoveKey</code> and pass the device as the argument.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksRemoveKey /dev/vda 
+</span></span><span class="line"><span class="cl">Enter passphrase to be deleted: 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
+</span></span></code></pre></div><p>It will ask us for the passphrase we want to remove and it will delete it from the list.</p>
+
 
 <h2 class="relative group">Conclusion 
     <div id="conclusion" class="anchor"></div>
@@ -1126,11 +963,10 @@ key.</p>
     </span>        
     
 </h2>
-<p>In this article I&rsquo;ve showed all you need to known to start using SSH to connect
-to your servers. It covers how to connect to your servers, install and configure
-a SSH server, how to use use SSH keys to authenticate and how to transfer files
-from one machine to another. If you find this article useful, feel free to share
-it to someone else or recommend my page. Have a nice day!</p>
+<p>In this article I&rsquo;ve showed you all the commands related to
+LUKS you need to know to encrypt a disk to protect sensitive
+data. If you find this guide useful, feel free to share it to
+other people or recommend the page. Have a nice day!</p>
 
           
           
@@ -1153,8 +989,8 @@ it to someone else or recommend my page. Have a nice day!</p>
           
         
       <script>
-        var oid = "views_blog\/linux\/ssh\/index.md"
-        var oid_likes = "likes_blog\/linux\/ssh\/index.md"
+        var oid = "views_blog\/linux\/luks\/index.md"
+        var oid_likes = "likes_blog\/linux\/luks\/index.md"
       </script>
       
       
@@ -1174,28 +1010,28 @@ it to someone else or recommend my page. Have a nice day!</p>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/linux/luks/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/blog/linux/ssh/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Protecting your files with LUKS</span
+                  >How to use SSH from Scratch</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
                 </span>
               </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
             </a>
-          
-        </span>
-        <span>
           
         </span>
       </div>
