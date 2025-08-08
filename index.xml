@@ -12,7 +12,17 @@
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>How to use SSH from Scratch</title>
+      <title>Configure RAID in your server with mdadm</title>
+      <link>https://example.org/blog/linux/raid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
+      <guid>https://example.org/blog/linux/raid/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://example.org/blog/linux/raid/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>How to use SSH from scratch</title>
       <link>https://example.org/blog/linux/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>

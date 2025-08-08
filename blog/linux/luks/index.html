@@ -12,7 +12,7 @@
   <meta name="title" content="Protecting your files with LUKS &middot; Aguirre Matteo" />
   
   <meta name="description" content="Explore how to use LUKS to fully encrypt your sensitive data." />
-  <meta name="keywords" content="luks, encryption, privacy, " />
+  <meta name="keywords" content="luks, encryption, privacy, cryptsetup, crypttab, " />
   
   
   <link rel="canonical" href="https://example.org/blog/linux/luks/" />
@@ -76,6 +76,8 @@
     <meta property="article:tag" content="Luks">
     <meta property="article:tag" content="Encryption">
     <meta property="article:tag" content="Privacy">
+    <meta property="article:tag" content="Cryptsetup">
+    <meta property="article:tag" content="Crypttab">
     <meta property="og:image" content="https://example.org/blog/linux/luks/featured.png">
 
   
@@ -106,10 +108,10 @@
     
     
     
-    "keywords": ["luks","encryption","privacy"],
+    "keywords": ["luks","encryption","privacy","cryptsetup","crypttab"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "834"
+    "wordCount": "835"
   }]
   </script>
 
@@ -615,6 +617,22 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/cryptsetup/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Cryptsetup
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/crypttab/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Crypttab
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -775,13 +793,13 @@ different passphrases to unlock the partition.</p>
     
 </h2>
 <p>Before continuing with the guide, we should first install
-the <code>cryptsetup</code> package, which provides the utils for
+the <code>cryptsetup</code> package, which provides the utilities for
 managing LUKS.</p>
 <p>If we are using Debian/Ubuntu we must run:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install cryptsetup
 </span></span></code></pre></div><p>Or in the case we&rsquo;re using a Fedora/RHEL derivative:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo dnf install cryptsetup-luks
-</span></span></code></pre></div><p>We&rsquo;ll also using <code>parted</code> for partitioning the disk, so
+</span></span></code></pre></div><p>We&rsquo;ll also be using <code>parted</code> for partitioning the disk, so
 make sure you have it installed, or use your prefered
 tool.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install parted <span class="c1"># Debian/Ubuntu</span>
@@ -1017,7 +1035,7 @@ other people or recommend the page. Have a nice day!</p>
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >How to use SSH from Scratch</span
+                  >How to use SSH from scratch</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   

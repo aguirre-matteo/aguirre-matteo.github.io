@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>How to use SSH from Scratch &middot; Aguirre Matteo</title>
-  <meta name="title" content="How to use SSH from Scratch &middot; Aguirre Matteo" />
+  <title>How to use SSH from scratch &middot; Aguirre Matteo</title>
+  <meta name="title" content="How to use SSH from scratch &middot; Aguirre Matteo" />
   
-  <meta name="description" content="Learn how to use and configure SSh to connect to your servers." />
-  <meta name="keywords" content="ssh, privacy, " />
+  <meta name="description" content="Learn how to use and configure ssh to connect to your servers." />
+  <meta name="keywords" content="ssh, privacy, remote-access, server, " />
   
   
   <link rel="canonical" href="https://example.org/blog/linux/ssh/" />
@@ -68,20 +68,22 @@
   
   <meta property="og:url" content="https://example.org/blog/linux/ssh/">
   <meta property="og:site_name" content="Aguirre Matteo">
-  <meta property="og:title" content="How to use SSH from Scratch">
-  <meta property="og:description" content="Learn how to use and configure SSh to connect to your servers.">
+  <meta property="og:title" content="How to use SSH from scratch">
+  <meta property="og:description" content="Learn how to use and configure ssh to connect to your servers.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
     <meta property="article:tag" content="Ssh">
     <meta property="article:tag" content="Privacy">
+    <meta property="article:tag" content="Remote-Access">
+    <meta property="article:tag" content="Server">
     <meta property="og:image" content="https://example.org/blog/linux/ssh/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://example.org/blog/linux/ssh/featured.png">
-  <meta name="twitter:title" content="How to use SSH from Scratch">
-  <meta name="twitter:description" content="Learn how to use and configure SSh to connect to your servers.">
+  <meta name="twitter:title" content="How to use SSH from scratch">
+  <meta name="twitter:description" content="Learn how to use and configure ssh to connect to your servers.">
 
   
   <script type="application/ld+json">
@@ -89,9 +91,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "How to use SSH from Scratch",
-    "headline": "How to use SSH from Scratch",
-    "description": "Learn how to use and configure SSh to connect to your servers.",
+    "name": "How to use SSH from scratch",
+    "headline": "How to use SSH from scratch",
+    "description": "Learn how to use and configure ssh to connect to your servers.",
     
     "inLanguage": "en",
     "url" : "https:\/\/example.org\/blog\/linux\/ssh\/",
@@ -105,7 +107,7 @@
     
     
     
-    "keywords": ["ssh","privacy"],
+    "keywords": ["ssh","privacy","remote-access","server"],
     
     "mainEntityOfPage": "true",
     "wordCount": "1784"
@@ -492,7 +494,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      How to use SSH from Scratch
+      How to use SSH from scratch
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -602,6 +604,22 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Privacy
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/remote-access/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Remote-Access
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/server/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Server
   </span>
 </span>
   </span>
@@ -757,7 +775,7 @@
     
 </h2>
 <p>SSH (Secure SHell) is a protocol designed to securely communicate with a remote computer.
-It validates the identity of user and encrypts all the data is send between the devices. It&rsquo;s
+It validates the identity of user and encrypts all the data is sent between the devices. It&rsquo;s
 widely used to run commands on a server over the internet and transfer files in a secure way. In
 this guide, I&rsquo;ll show you how to install SSH, configure it, and how you can use it to connect to your servers.</p>
 
@@ -829,7 +847,7 @@ we can reach our SSH server. For example, if we&rsquo;re using <code>ufw</code>,
 We can find it at <code>/etc/ssh/sshd_config</code>. It provides a large number of
 options which we can find in the manual running <code>man sshd_config</code>. Here
 I show you an example configuration, which modifies the most commonly used options:</p>
-<pre tabindex="0"><code class="language-sshd_config" data-lang="sshd_config"># Which port SSH should use. It&#39;s highly recommended to keep it
+<pre tabindex="0"><code class="language-sshd_config" data-lang="sshd_config"># Which port SSH should use. It&#39;s highly recommended keeping it
 # at 22, since it could break your setup.
 Port 22
 
@@ -837,9 +855,9 @@ Port 22
 # and use sudo instead when needed.
 PermitRootLogin no
 
-# Enables Public Key Autentication, making it posible to login 
+# Enables Public Key Authentication, making it posible to login 
 # using a SSH key instead of using a password.
-PubkeyAutentication yes
+PubkeyAuthentication, yes
 
 # You&#39;ll only be able to auth to your server using SSH keys.
 # Make sure you add your keys before disabling this.
@@ -900,7 +918,7 @@ to verify the server&rsquo;s authenticity, seeing a message like this:</p>
     
 </h2>
 <p>SSH keys are a more powerful method to authenticate to your servers,
-making your connection more secure and allowing to login without being
+making your connection more secure and allowing to log in without being
 asked for the password. To use SSH keys we first have to generate a
 public-private key pair. To do so we use the <code>ssh-keygen</code> command.
 We&rsquo;ll be prompted to enter the path where we want to save the key pair.
@@ -914,7 +932,7 @@ I&rsquo;ll save mine at <code>~/.ssh/</code> and call it <code>myserver</code>.<
 </span></span><span class="line"><span class="cl">Your public key has been saved in /home/matteo/.ssh/myserver.pub
 </span></span><span class="line"><span class="cl">The key fingerprint is:
 </span></span><span class="line"><span class="cl">SHA256:lNjTQHE+ojhhdlI9BwoGJKgpt/AjQPNJEtgIUmkI9sQ matteo@nixos
-</span></span><span class="line"><span class="cl">The key<span class="err">&#39;</span>s randomart image is:
+</span></span><span class="line"><span class="cl">The key<span class="err">&#39;</span>s random art image is:
 </span></span><span class="line"><span class="cl">+--<span class="o">[</span>ED25519 256<span class="o">]</span>--+
 </span></span><span class="line"><span class="cl"><span class="p">|</span>XO*+o .o<span class="o">=</span>o.      <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span><span class="nv">B</span><span class="o">=</span>*E o +o*.      <span class="p">|</span>
@@ -929,7 +947,7 @@ I&rsquo;ll save mine at <code>~/.ssh/</code> and call it <code>myserver</code>.<
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$
 </span></span></code></pre></div><p>If we want, we can enter a passphrase for our private key, enhancing the
-security of the connection. Otherwise leave it empty. Now it&rsquo;s time to
+security of the connection. Otherwise, leave it empty. Now it&rsquo;s time to
 add our keys to our server using the <code>ssh-copy-id</code> command.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ ssh-copy-id -i ~/.ssh/myserver myssh-user@192.160.122.230
 </span></span><span class="line"><span class="cl">/run/current-system/sw/bin/ssh-copy-id: INFO: Source of key<span class="o">(</span>s<span class="o">)</span> to be installed: <span class="s2">&#34;/home/matteo/.ssh/myserver.pub&#34;</span>
@@ -956,7 +974,7 @@ that our keys were successfully added. Now we can connect to our server using th
 </span></span><span class="line"><span class="cl">permitted by applicable law.
 </span></span><span class="line"><span class="cl">Last login: Sun Jun  <span class="m">1</span> 18:39:37 <span class="m">2025</span>
 </span></span><span class="line"><span class="cl">myssh-user@deb-homelab:~$ 
-</span></span></code></pre></div><p>And <em>voila</em>! We wasn&rsquo;t prompted for entering the password!</p>
+</span></span></code></pre></div><p>And <em>voila</em>! We weren&rsquo;t prompted for entering the password!</p>
 
 
 <h2 class="relative group">File Transfer 
@@ -1028,7 +1046,7 @@ we do the following:</p>
 </h3>
 <p>SFTP stands for Secure File Transfer Protocol. It&rsquo;s an improved version of the FTP
 protocol to use SSH to encrypt the communication, and it allows us to interactively
-access the remote filesystem providing commands like <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rm</code>, amoung
+access the remote filesystem providing commands like <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>rm</code>, among
 others. To use it we have to run <code>sftp</code> and pass our server as the argument:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ sftp myssh-user@192.168.122.160 <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>-i /home/matteo/.ssh/myserver
@@ -1081,8 +1099,8 @@ and press enter.</p>
 <p>We may face some situations where we are constantly accessing to the same
 server, and it becomes repetitive to write the same username and IP address
 over and over again. To those cases, SSH allows up to create a config file
-under ~/.ssh/config to declare our servers so we can use an alias instead
-of running the entire command. These declarations uses the following syntax:</p>
+under ~/.ssh/config to declare our servers, so we can use an alias instead
+of running the entire command. These declarations use the following syntax:</p>
 <pre tabindex="0"><code class="language-ssh_config" data-lang="ssh_config">Host &lt;alias&gt;
     Hostname &lt;ip-address&gt;
     User &lt;username&gt;
@@ -1126,9 +1144,9 @@ key.</p>
     </span>        
     
 </h2>
-<p>In this article I&rsquo;ve showed all you need to known to start using SSH to connect
+<p>In this article I&rsquo;ve showed all you need to know to start using SSH to connect
 to your servers. It covers how to connect to your servers, install and configure
-a SSH server, how to use use SSH keys to authenticate and how to transfer files
+a SSH server, how to use SSH keys to authenticate and how to transfer files
 from one machine to another. If you find this article useful, feel free to share
 it to someone else or recommend my page. Have a nice day!</p>
 
@@ -1196,6 +1214,26 @@ it to someone else or recommend my page. Have a nice day!</p>
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/blog/linux/raid/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Configure RAID in your server with mdadm</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>

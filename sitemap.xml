@@ -13,6 +13,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://example.org/blog/linux/raid/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://example.org/blog/linux/ssh/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
