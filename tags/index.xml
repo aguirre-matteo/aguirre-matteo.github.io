@@ -42,6 +42,26 @@
     </item>
     
     <item>
+      <title>File Sharing</title>
+      <link>https://example.org/tags/file-sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
+      <guid>https://example.org/tags/file-sharing/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ftp</title>
+      <link>https://example.org/tags/ftp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
+      <guid>https://example.org/tags/ftp/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Luks</title>
       <link>https://example.org/tags/luks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,6 +77,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
       <guid>https://example.org/tags/mdadm/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://example.org/tags/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
+      <guid>https://example.org/tags/network/</guid>
       <description></description>
       
     </item>
@@ -137,6 +167,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
       <guid>https://example.org/tags/storage/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Vsftpd</title>
+      <link>https://example.org/tags/vsftpd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>aguirre.matteo77@gmail.com (Aguirre Matteo)</author>
+      <guid>https://example.org/tags/vsftpd/</guid>
       <description></description>
       
     </item>

@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Protecting your files with LUKS &middot; Aguirre Matteo</title>
-  <meta name="title" content="Protecting your files with LUKS &middot; Aguirre Matteo" />
+  <title>Sharing files across the network with FTP &middot; Aguirre Matteo</title>
+  <meta name="title" content="Sharing files across the network with FTP &middot; Aguirre Matteo" />
   
-  <meta name="description" content="Explore how to use LUKS to fully encrypt your sensitive data." />
-  <meta name="keywords" content="luks, encryption, privacy, cryptsetup, crypttab, " />
+  <meta name="description" content="Learn how to setup your own FTP server to remotely accessing your files" />
+  <meta name="keywords" content="ftp, network, server, vsftpd, file sharing, " />
   
   
-  <link rel="canonical" href="https://example.org/blog/linux/luks/" />
+  <link rel="canonical" href="https://example.org/blog/linux/ftp/" />
   
   
   
@@ -66,25 +66,25 @@
   
   
   
-  <meta property="og:url" content="https://example.org/blog/linux/luks/">
+  <meta property="og:url" content="https://example.org/blog/linux/ftp/">
   <meta property="og:site_name" content="Aguirre Matteo">
-  <meta property="og:title" content="Protecting your files with LUKS">
-  <meta property="og:description" content="Explore how to use LUKS to fully encrypt your sensitive data.">
+  <meta property="og:title" content="Sharing files across the network with FTP">
+  <meta property="og:description" content="Learn how to setup your own FTP server to remotely accessing your files">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:tag" content="Luks">
-    <meta property="article:tag" content="Encryption">
-    <meta property="article:tag" content="Privacy">
-    <meta property="article:tag" content="Cryptsetup">
-    <meta property="article:tag" content="Crypttab">
-    <meta property="og:image" content="https://example.org/blog/linux/luks/featured.png">
+    <meta property="article:tag" content="Ftp">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="Server">
+    <meta property="article:tag" content="Vsftpd">
+    <meta property="article:tag" content="File Sharing">
+    <meta property="og:image" content="https://example.org/blog/linux/ftp/featured.jpg">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://example.org/blog/linux/luks/featured.png">
-  <meta name="twitter:title" content="Protecting your files with LUKS">
-  <meta name="twitter:description" content="Explore how to use LUKS to fully encrypt your sensitive data.">
+  <meta name="twitter:image" content="https://example.org/blog/linux/ftp/featured.jpg">
+  <meta name="twitter:title" content="Sharing files across the network with FTP">
+  <meta name="twitter:description" content="Learn how to setup your own FTP server to remotely accessing your files">
 
   
   <script type="application/ld+json">
@@ -92,12 +92,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "Protecting your files with LUKS",
-    "headline": "Protecting your files with LUKS",
-    "description": "Explore how to use LUKS to fully encrypt your sensitive data.",
+    "name": "Sharing files across the network with FTP",
+    "headline": "Sharing files across the network with FTP",
+    "description": "Learn how to setup your own FTP server to remotely accessing your files",
     
     "inLanguage": "en",
-    "url" : "https:\/\/example.org\/blog\/linux\/luks\/",
+    "url" : "https:\/\/example.org\/blog\/linux\/ftp\/",
     "author" : {
       "@type": "Person",
       "name": "Aguirre Matteo"
@@ -108,10 +108,10 @@
     
     
     
-    "keywords": ["luks","encryption","privacy","cryptsetup","crypttab"],
+    "keywords": ["ftp","network","server","vsftpd","file sharing"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "835"
+    "wordCount": "790"
   }]
   </script>
 
@@ -474,7 +474,7 @@
   
 
 
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/blog/linux/luks/featured_hu_9d01e933cf928352.png);"></div>
+<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/blog/linux/ftp/featured_hu_42ef21a526a1568f.jpg);"></div>
 
 
 
@@ -495,7 +495,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Protecting your files with LUKS
+      Sharing files across the network with FTP
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -593,42 +593,42 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/luks/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ftp/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Luks
+    Ftp
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/encryption/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/network/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Encryption
+    Network
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/privacy/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/server/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Privacy
+    Server
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/cryptsetup/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/vsftpd/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Cryptsetup
+    Vsftpd
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/crypttab/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/file-sharing/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Crypttab
+    File Sharing
   </span>
 </span>
   </span>
@@ -680,15 +680,14 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#creating-an-encrypted-partition">Creating an encrypted partition</a></li>
-    <li><a href="#mounting-on-boot">Mounting on boot</a></li>
-    <li><a href="#managing-passphrases">Managing passphrases</a>
+    <li><a href="#security-concerns">Security concerns</a></li>
+    <li><a href="#setup">Setup</a>
       <ul>
-        <li><a href="#add-key">Add key</a></li>
-        <li><a href="#remove-key">Remove key</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#configuration">Configuration</a></li>
       </ul>
     </li>
+    <li><a href="#connecting-to-the-server">Connecting to the server</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -704,15 +703,14 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#requirements">Requirements</a></li>
-    <li><a href="#creating-an-encrypted-partition">Creating an encrypted partition</a></li>
-    <li><a href="#mounting-on-boot">Mounting on boot</a></li>
-    <li><a href="#managing-passphrases">Managing passphrases</a>
+    <li><a href="#security-concerns">Security concerns</a></li>
+    <li><a href="#setup">Setup</a>
       <ul>
-        <li><a href="#add-key">Add key</a></li>
-        <li><a href="#remove-key">Remove key</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#configuration">Configuration</a></li>
       </ul>
     </li>
+    <li><a href="#connecting-to-the-server">Connecting to the server</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -769,206 +767,192 @@
     </span>        
     
 </h2>
-<p>Securing our private data from a bare-metal attack is
-extremely important if we want to ensure privacy. This
-is especially the case on laptops, since they&rsquo;re in
-constant exposure to the external world, and on enterprise
-and governmental computers, where a leak of information
-could compromise the personal data of a large number
-of persons. LUKS is currently the most powerful and widely
-adopted solution for disk encryption on Linux. In this guide
-I&rsquo;ll show you how to use LUKS to encrypt your disks, how to
-configure it to automatically mount on boot, and how to manage
-different passphrases to unlock the partition.</p>
+<p>FTP (File Transfer Protocol) is an Internet protocol used to transfer files
+between different machines over a network. It follows the client-server model
+where a client installs an FTP client app to connect to a remote FTP server. In this guide, you&rsquo;ll learn how to setup your own FTP
+server and access it through different clients.</p>
 
 
-<h2 class="relative group">Requirements 
-    <div id="requirements" class="anchor"></div>
+<h2 class="relative group">Security concerns 
+    <div id="security-concerns" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#security-concerns" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Before continuing with the guide, we should first install
-the <code>cryptsetup</code> package, which provides the utilities for
-managing LUKS.</p>
-<p>If we are using Debian/Ubuntu we must run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install cryptsetup
-</span></span></code></pre></div><p>Or in the case we&rsquo;re using a Fedora/RHEL derivative:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo dnf install cryptsetup-luks
-</span></span></code></pre></div><p>We&rsquo;ll also be using <code>parted</code> for partitioning the disk, so
-make sure you have it installed, or use your prefered
-tool.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install parted <span class="c1"># Debian/Ubuntu</span>
-</span></span><span class="line"><span class="cl">sudo dnf install parted <span class="c1"># Fedora/RHEL</span>
-</span></span></code></pre></div>
+<p>The FTP protocol is in disuse due to some major security issues,
+like the lack of encryption, vulnerable to brute-force attacks since
+it doesn&rsquo;t have stronger authentication mechanism than usernames and passwords,
+and being susceptible to DDoS attacks. In most cases it&rsquo;s highly recommended
+to use more secure alternatives like SFTP or FTPS, so take this post just as
+an educational piece of information, and don&rsquo;t follow the steps if you are
+setting up a sever in production.</p>
 
-<h2 class="relative group">Creating an encrypted partition 
-    <div id="creating-an-encrypted-partition" class="anchor"></div>
+
+<h2 class="relative group">Setup 
+    <div id="setup" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#creating-an-encrypted-partition" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#setup" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Open the terminal and find which disk/partition you want to encrypt.
-In my case, I have two virtual disks, <code>vda</code> and <code>vdb</code>, and I&rsquo;ll use
-the last to store my sensitive data.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ lsblk
-</span></span><span class="line"><span class="cl">NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
-</span></span><span class="line"><span class="cl">vda    253:0    <span class="m">0</span>   20G  <span class="m">0</span> disk 
-</span></span><span class="line"><span class="cl">├─vda1 253:1    <span class="m">0</span>  1.9G  <span class="m">0</span> part 
-</span></span><span class="line"><span class="cl">└─vda2 253:2    <span class="m">0</span> 18.1G  <span class="m">0</span> part 
-</span></span><span class="line"><span class="cl">vdb    253:16   <span class="m">0</span>   20G  <span class="m">0</span> disk 
-</span></span></code></pre></div><p>The first step is to format the disk/partition as a LUKS device. To
-do so we have to run <code>cryptsetup luksFormat /dev/disk</code> and set the
-passphrase we want to use to protect the data.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksFormat /dev/vdb
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">WARNING!
-</span></span><span class="line"><span class="cl"><span class="o">========</span>
-</span></span><span class="line"><span class="cl">This will overwrite data on /dev/vdb irrevocably.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Are you sure? <span class="o">(</span>Type <span class="s1">&#39;yes&#39;</span> in capital letters<span class="o">)</span>: YES
-</span></span><span class="line"><span class="cl">Enter passphrase <span class="k">for</span> /dev/vdb: 
-</span></span><span class="line"><span class="cl">Verify passphrase: 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div><p>This completely wiped the disk, so all the data that was there now
-is lost. To start working with it, we have to unlock the device
-using the <code>cryptsetup open</code> command.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup open /dev/vdb encrypted-disk
-</span></span><span class="line"><span class="cl">Enter passphrase <span class="k">for</span> /dev/vdb: 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div><p>I&rsquo;ll call it <code>encrypted-disk</code> so it&rsquo;s more easy to recognize it. Now
-the device is available under <code>/dev/mapper/encrypted-disk</code>. Replace
-the last part with the name you gave. I&rsquo;ll format it as a BTRFS
-filesystem and mount it at <code>/mnt</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ mkfs.btrfs /dev/mapper/encrypted-disk 
-</span></span><span class="line"><span class="cl">btrfs-progs v6.11
-</span></span><span class="line"><span class="cl">See https://btrfs.readthedocs.io <span class="k">for</span> more information.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">NOTE: several default settings have changed in version 5.15, please make sure
-</span></span><span class="line"><span class="cl">      this does not affect your deployments:
-</span></span><span class="line"><span class="cl">      - DUP <span class="k">for</span> metadata <span class="o">(</span>-m dup<span class="o">)</span>
-</span></span><span class="line"><span class="cl">      - enabled no-holes <span class="o">(</span>-O no-holes<span class="o">)</span>
-</span></span><span class="line"><span class="cl">      - enabled free-space-tree <span class="o">(</span>-R free-space-tree<span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Label:              <span class="o">(</span>null<span class="o">)</span>
-</span></span><span class="line"><span class="cl">UUID:               35cf0855-f5d6-4fe8-b773-808bbefb8493
-</span></span><span class="line"><span class="cl">Node size:          <span class="m">16384</span>
-</span></span><span class="line"><span class="cl">Sector size:        4096	<span class="o">(</span>CPU page size: 4096<span class="o">)</span>
-</span></span><span class="line"><span class="cl">Filesystem size:    19.98GiB
-</span></span><span class="line"><span class="cl">Block group profiles:
-</span></span><span class="line"><span class="cl">  Data:             single            8.00MiB
-</span></span><span class="line"><span class="cl">  Metadata:         DUP             256.00MiB
-</span></span><span class="line"><span class="cl">  System:           DUP               8.00MiB
-</span></span><span class="line"><span class="cl">SSD detected:       no
-</span></span><span class="line"><span class="cl">Zoned device:       no
-</span></span><span class="line"><span class="cl">Features:           extref, skinny-metadata, no-holes, free-space-tree
-</span></span><span class="line"><span class="cl">Checksum:           crc32c
-</span></span><span class="line"><span class="cl">Number of devices:  <span class="m">1</span>
-</span></span><span class="line"><span class="cl">Devices:
-</span></span><span class="line"><span class="cl">   ID        SIZE  PATH                      
-</span></span><span class="line"><span class="cl">    <span class="m">1</span>    19.98GiB  /dev/mapper/encrypted-disk
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ mount /dev/mapper/encrypted-disk /mnt/
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div><p>And if we want to umount it, we should run <code>umount</code> and
-<code>cryptsetup close</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ umount /mnt 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup close encrypted-disk 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div>
 
-<h2 class="relative group">Mounting on boot 
-    <div id="mounting-on-boot" class="anchor"></div>
+
+<h3 class="relative group">Installation 
+    <div id="installation" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#mounting-on-boot" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Cryptsetup has it own <code>fstab</code>-like config file where we can declare
-all the encrypted devices we want to unlock during the boot. We
-can find it at <code>/etc/crypttab</code> and the syntax of each line is like
-it follows:</p>
-<pre tabindex="0"><code class="language-crypttab" data-lang="crypttab">volume-name device key-file options
-</code></pre><p>In our example, I should configure it like this, using the UUID of
-the disk to identify it. We can get the UUID running <code>cryptsetup luksUUID</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksUUID /dev/vdb 
-</span></span><span class="line"><span class="cl">283c80cf-04ee-42f4-afe8-4b51bc124498
-</span></span></code></pre></div><p>On <code>/etc/crypttab</code>:</p>
-<pre tabindex="0"><code class="language-crypttab" data-lang="crypttab">encrypted-disk UUID=283c80cf-04ee-42f4-afe8-4b51bc124498 none luks
-</code></pre><p>Now we add an entry to <code>/etc/fstab</code> to mount it automatically on boot:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/dev/mapper/encrypted-disk /mnt btrfs defaults <span class="m">0</span> <span class="m">2</span>
-</span></span></code></pre></div><p>And the last step is to update the initram so the changes are applied:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">update-initramfs -u -k all
-</span></span></code></pre></div>
-
-<h2 class="relative group">Managing passphrases 
-    <div id="managing-passphrases" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#managing-passphrases" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>LUKS permits us to set multiple keys to unlock the encrypted disk,
-allowing for more flexibility. Cryptsetup provides commands for both
-adding and removing passphrases from the disk.</p>
-
-
-<h3 class="relative group">Add key 
-    <div id="add-key" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#add-key" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>To add a new passphrase to our setup, we can use the <code>cryptsetup luksAddKey</code> command, followed by the device we want to modify.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksAddKey /dev/vda 
-</span></span><span class="line"><span class="cl">Enter any existing passphrase: 
-</span></span><span class="line"><span class="cl">Enter new passphrase <span class="k">for</span> key slot: 
-</span></span><span class="line"><span class="cl">Verify passphrase: 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div><p>It will prompt us to enter the already existent passphrase we&rsquo;ve set up, and the new passphrases we want to add.</p>
+<p>The first thing we should do is to install the <code>vsftpd</code> package,
+which we can do running:</p>
+<p>In Debian/Ubuntu distributions:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install vsftpd
+</span></span></code></pre></div><p>Or on RedHat-based systems:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo dnf install vsftpd
+</span></span></code></pre></div><p>The server should start automatically, but if that&rsquo;s not the case
+we can start it manually doing:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> vsftpd
+</span></span><span class="line"><span class="cl">sudo systemctl start vsftpd
+</span></span></code></pre></div><p>And of course, if we have previously configured a firewall, we have
+to open ports <code>20</code> and <code>21</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo ufw allow 20/tcp
+</span></span><span class="line"><span class="cl">sudo ufw allow 21/tcp
+</span></span></code></pre></div>
 
-
-<h3 class="relative group">Remove key 
-    <div id="remove-key" class="anchor"></div>
+<h3 class="relative group">Configuration 
+    <div id="configuration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#remove-key" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#configuration" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>To remove a passphrase from the LUKS device, we use <code>cryptsetup luksRemoveKey</code> and pass the device as the argument.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ cryptsetup luksRemoveKey /dev/vda 
-</span></span><span class="line"><span class="cl">Enter passphrase to be deleted: 
+<p>In my case, I&rsquo;ll configure the server to allow accessing both with
+a username and a password, and anonymously. First, let&rsquo;s create
+the users we want to expose through the server. I&rsquo;ll call them
+<code>teachers</code> and <code>lab-students</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo useradd -m teachers
+</span></span><span class="line"><span class="cl">sudo useradd -m lab-students
+</span></span><span class="line"><span class="cl">sudo passwd teachers
+</span></span><span class="line"><span class="cl">sudo passwd lab-students
+</span></span></code></pre></div><p>And setup the directories we&rsquo;ll serve:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p /srv/ftp/public
+</span></span><span class="line"><span class="cl">chmod <span class="m">555</span> /srv/ftp/public
+</span></span><span class="line"><span class="cl">chown ftp:ftp /srv/ftp/public
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@nixos:~<span class="o">]</span>$ 
-</span></span></code></pre></div><p>It will ask us for the passphrase we want to remove and it will delete it from the list.</p>
+</span></span><span class="line"><span class="cl">mkdir -p /home/<span class="o">{</span>lab-students,teachers<span class="o">}</span>/ftp
+</span></span><span class="line"><span class="cl">chmod <span class="m">755</span> /home/<span class="o">{</span>lab-students,teachers<span class="o">}</span>/ftp
+</span></span><span class="line"><span class="cl">chown lab-students:lab-students /home/lab-students/ftp
+</span></span><span class="line"><span class="cl">chown teachers:teachers /home/teachers/ftp
+</span></span></code></pre></div><p>Now, let&rsquo;s open <code>/etc/vsftpd.conf</code> and write the following lines
+to the file:</p>
+<pre tabindex="0"><code class="language-vsftpd.conf" data-lang="vsftpd.conf"># Enable anonymous access
+anonymous_enable=YES
+no_anon_password=YES
+
+# Setup the public directory as read-only
+anon_root=/srv/ftp/public
+anon_upload_enable=NO
+anon_mkdir_write_enable=NO
+anon_other_write_enable=NO
+
+# Vsftpd will replace this token with the respective username
+user_sub_token=$USER
+
+# The directory the daemon must serve
+local_root=/home/$USER/ftp
+
+# This allows logging in as local users
+local_enable=YES
+
+# Gives clients write permissions
+write_enable=YES
+
+# Makes sure users don&#39;t access each others files
+chroot_local_user=YES
+
+# Configures the list of users we&#39;ll allow logging in as
+userlist_enable=YES
+
+# Deny accessing as any other users
+userlist_deny=NO
+</code></pre><p>And in <code>/etc/vsftpd.user_list</code> we write the usernames:</p>
+<pre tabindex="0"><code class="language-vsftpd.userlist" data-lang="vsftpd.userlist">teachers
+lab-students
+</code></pre><p>And finally restart the service so it reloads the configuration:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart vsftpd
+</span></span></code></pre></div>
+
+<h2 class="relative group">Connecting to the server 
+    <div id="connecting-to-the-server" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#connecting-to-the-server" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Now, to connect to our FTP server we must use an FTP client software.
+There are GUI frontends out there, like Filezilla and WinSCP, but I&rsquo;ll
+use a CLI client called <code>lftp</code>, which we can install running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install lftp <span class="c1"># Debian/Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo dnf install lftp <span class="c1"># Fedora/RHEL</span>
+</span></span></code></pre></div><p>We run <code>lftp</code> followed by the IP address of our remote server and we&rsquo;ll
+be connected to it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ lftp 192.168.122.2
+</span></span><span class="line"><span class="cl">lftp 192.168.122.2:~&gt; 
+</span></span></code></pre></div><p>By default, we&rsquo;ll login anonymously, so if try to list the contents of
+the current directory, it will show the public available files:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lftp 192.168.122.2:~&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">31</span> Aug <span class="m">23</span> 14:24 my.txt
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">26</span> Aug <span class="m">23</span> 14:24 public.txt
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">26</span> Aug <span class="m">23</span> 14:24 files.txt
+</span></span><span class="line"><span class="cl">lftp 192.168.122.2:~&gt; 
+</span></span></code></pre></div><p>Now to login as a specific user we type <code>login</code> followed by the username.
+We&rsquo;ll be prompted to enter it&rsquo;s respective password.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lftp 192.168.122.2:~&gt; login teachers
+</span></span><span class="line"><span class="cl">Password: 
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt;
+</span></span></code></pre></div><p>The FTP shell provides commands such as <code>mkdir</code>, <code>rmdir</code>, <code>put</code>
+and <code>get</code> which we can use to perform those respective operations
+in the filesystem.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">31</span> Aug <span class="m">23</span> 14:24 another.txt
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">26</span> Aug <span class="m">23</span> 14:24 message.txt
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; mkdir a b c
+</span></span><span class="line"><span class="cl">mkdir ok, <span class="m">3</span> directories created
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; get message.txt 
+</span></span><span class="line"><span class="cl"><span class="m">26</span> bytes transferred
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; put ./local.txt 
+</span></span><span class="line"><span class="cl"><span class="m">7048</span> bytes transferred
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; ls
+</span></span><span class="line"><span class="cl">drwx------    <span class="m">2</span> <span class="m">1001</span>     <span class="m">1001</span>         <span class="m">4096</span> Aug <span class="m">23</span> 14:25 a
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">31</span> Aug <span class="m">23</span> 14:24 another.txt
+</span></span><span class="line"><span class="cl">drwx------    <span class="m">2</span> <span class="m">1001</span>     <span class="m">1001</span>         <span class="m">4096</span> Aug <span class="m">23</span> 14:25 b
+</span></span><span class="line"><span class="cl">drwx------    <span class="m">2</span> <span class="m">1001</span>     <span class="m">1001</span>         <span class="m">4096</span> Aug <span class="m">23</span> 14:25 c
+</span></span><span class="line"><span class="cl">-rw-------    <span class="m">1</span> <span class="m">1001</span>     <span class="m">1001</span>            <span class="m">0</span> Aug <span class="m">23</span> 14:26 local.txt
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>              <span class="m">26</span> Aug <span class="m">23</span> 14:24 message.txt
+</span></span><span class="line"><span class="cl">lftp teachers@192.168.122.2:~&gt; <span class="nb">exit</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$ cat ./message.txt 
+</span></span><span class="line"><span class="cl">Hello from my FTP server!
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>matteo@nixos:~<span class="o">]</span>$
+</span></span></code></pre></div><p>All the available commands can be found running <code>help</code> in the FTP shell.</p>
 
 
 <h2 class="relative group">Conclusion 
@@ -981,10 +965,11 @@ adding and removing passphrases from the disk.</p>
     </span>        
     
 </h2>
-<p>In this article I&rsquo;ve showed you all the commands related to
-LUKS you need to know to encrypt a disk to protect sensitive
-data. If you find this guide useful, feel free to share it to
-other people or recommend the page. Have a nice day!</p>
+<p>This guides briefly shows how to setup a simple FTP server
+from scratch, covering how to configurate different users
+and how to connect to the server via a CLI FTP client.
+If you find this guide useful, feel free to share it to
+somebody else or recommend the page. Have a nice day!</p>
 
           
           
@@ -1007,8 +992,8 @@ other people or recommend the page. Have a nice day!</p>
           
         
       <script>
-        var oid = "views_blog\/linux\/luks\/index.md"
-        var oid_likes = "likes_blog\/linux\/luks\/index.md"
+        var oid = "views_blog\/linux\/ftp\/index.md"
+        var oid_likes = "likes_blog\/linux\/ftp\/index.md"
       </script>
       
       
@@ -1028,34 +1013,14 @@ other people or recommend the page. Have a nice day!</p>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/blog/linux/ftp/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Sharing files across the network with FTP</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                </span>
-              </span>
-            </a>
-          
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/blog/linux/ssh/">
+            <a class="flex text-right group ml-3" href="/blog/linux/luks/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >How to use SSH from scratch</span
+                  >Protecting your files with LUKS</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
